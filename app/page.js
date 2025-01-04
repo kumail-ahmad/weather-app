@@ -53,25 +53,25 @@ export default function Home() {
           </p>
         </div>
       ) : (
-        <p> Errror </p>
+        <p className="ml-14 mt-4 text-white text-2xl"> Loading.. </p>
       )}
       <footer>
         <div class="footer  ">
           <div className="icons ">
-            <p class="text-gray-500 text-sm text-center sm:text-left">
+            <p class="text-white text text-center ml-52 mt-40 sm:text-left">
               © 2025 Weather-app —
               <a
                 href="#"
                 rel="noopener noreferrer"
-                class="text-gray-600 ml-1"
+                class="text-white ml-1"
                 target="_blank"
               >
                 Kumail-ahmad
               </a>
             </p>
-            <span class="social-icons flex p-3 ml-60 mt-40 flex-row gap-5">
+            <span class="social-icons flex p-3 ml-60  flex-row gap-5">
               <a
-                href="https://github.com/rahiilsiddiquii"
+                href="https://github.com/kumail-ahmad"
                 class="github"
                 target="_blank"
               >
