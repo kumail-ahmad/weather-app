@@ -114,7 +114,7 @@ export default function Home() {
                 </svg>
               </a>
               <a
-                href="https://www.linkedin.com/in/rahil-siddiqui-819678285?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+                href="https://www.linkedin.com/in/kumal-ahmad-819678285?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
                 class="linkedin"
                 target="_blank"
               >
