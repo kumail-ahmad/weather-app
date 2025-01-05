@@ -5,10 +5,13 @@ export default function Home() {
   const [city, setCity] = useState("");
   const [weatherData, setWeatherData] = useState(null);
   const [error, setError] = useState(null);
+  const [Loading, setLoading] = useState(false);
+
   const API_KEY = "16c3147e7167660a2048c681716e8b15";
   const apiUrl = "https://api.openweathermap.org/data/2.5/weather";
 
   const fetchWeather = async () => {
+    setLoading(true);
     try {
       const response = await fetch(
         `${apiUrl}?q=${city}&appid=${API_KEY}&units=metric`
@@ -21,6 +24,8 @@ export default function Home() {
       console.error("Error fetching weather data:", err);
       setError(err.message);
       setWeatherData(null);
+    } finally {
+      setLoading(false);
     }
   };
   return (
@@ -36,21 +41,25 @@ export default function Home() {
         <button
           onClick={fetchWeather}
           className="ml-4 p-3 w-24 bg-gray-800 rounded-full text-white  disabled:bg-gray-600"
-          disabled={city.length<2}
+          disabled={city.length < 2}
         >
           Submit
         </button>
       </div>
-      {weatherData ? (
+      {Loading ? (
+        <p className="ml-36 mt-4 text-white  text-lg">
+          Loading.. Your weather info is currently being fetched
+        </p>
+      ) : weatherData ? (
         <div className="data ml-44 mt-5 p-2">
-          <p className="text-3xl font-bold">
+          <p className="text-3xl font-bold text-white">
             Weather in {weatherData.name},{weatherData.sys.country}
           </p>
           <p className="text-3xl text-white font-bold mt-6">
             {weatherData.main.temp}°C
           </p>
           <p className="text-lg text-white font-bold mt-6">
-            Current Climate :{weatherData.weather[0].description}
+            Current Climate : {weatherData.weather[0].description}
           </p>
           <p className="text-lg text-white  font-semibold">
             Humidity: {weatherData.main.humidity}
@@ -60,7 +69,9 @@ export default function Home() {
           </p>
         </div>
       ) : (
-        <p className="ml-14 mt-4 text-white text-lg"> Loading.. </p>
+        <p className="ml-36 mt-4 text-white text-lg">
+          Enter the city you want to view the weather of.
+        </p>
       )}
       <footer>
         <div className="footer  ">
