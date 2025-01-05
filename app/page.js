@@ -41,16 +41,20 @@ export default function Home() {
         </button>
       </div>
       {weatherData ? (
-        <div className="data ml-44 mt-3 p-2">
+        <div className="data ml-44 mt-5 p-2">
           <p className="text-3xl font-bold">
             Weather in {weatherData.name},{weatherData.sys.country}
           </p>
-          <p className="text-3xl font-bold">{weatherData.main.temp}°C</p>
-          <p className="text-xl font-bold">{weatherData.weather.main}</p>
-          <p className="text-xl font-semibold">
+          <p className="text-3xl text-white font-bold mt-6">
+            {weatherData.main.temp}°C
+          </p>
+          <p className="text-lg text-white font-bold mt-6">
+            Current Climate :{weatherData.weather.description}
+          </p>
+          <p className="text-lg text-white  font-semibold">
             Humidity: {weatherData.main.humidity}
           </p>
-          <p className="text-xl font-semibold">
+          <p className="text-lg text-white font-semibold">
             Wind Speed: {weatherData.wind.speed}
           </p>
         </div>
