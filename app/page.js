@@ -35,7 +35,8 @@ export default function Home() {
         />
         <button
           onClick={fetchWeather}
-          className="ml-4 p-3 w-24 bg-gray-700 rounded-full text-white hover:bg-gray-900"
+          className="ml-4 p-3 w-24 bg-gray-800 rounded-full text-white  disabled:bg-gray-600"
+          disabled={city.length<2}
         >
           Submit
         </button>
@@ -49,7 +50,7 @@ export default function Home() {
             {weatherData.main.temp}°C
           </p>
           <p className="text-lg text-white font-bold mt-6">
-            Current Climate :{weatherData.weather.description}
+            Current Climate :{weatherData.weather[0].description}
           </p>
           <p className="text-lg text-white  font-semibold">
             Humidity: {weatherData.main.humidity}
@@ -59,7 +60,7 @@ export default function Home() {
           </p>
         </div>
       ) : (
-        <p className="ml-14 mt-4 text-white text-2xl"> Loading.. </p>
+        <p className="ml-14 mt-4 text-white text-lg"> Loading.. </p>
       )}
       <footer>
         <div className="footer  ">
