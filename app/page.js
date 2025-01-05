@@ -24,7 +24,7 @@ export default function Home() {
     }
   };
   return (
-    <div className="container mt-32 ml-[25vw] bg-opacity-50 bg-black justify-center items-center h-[70vh] w-[50vw] rounded-3xl">
+    <div className="container mt-28 ml-[25vw] bg-opacity-50 bg-black justify-center items-center h-[70vh] w-[50vw] rounded-3xl">
       <div className="search ml-40  ">
         <input
           type="text"
@@ -35,14 +35,16 @@ export default function Home() {
         />
         <button
           onClick={fetchWeather}
-          className="ml-4 p-3 bg-blue-500 rounded-full text-white hover:bg-blue-700"
+          className="ml-4 p-3 w-24 bg-gray-700 rounded-full text-white hover:bg-gray-900"
         >
           Submit
         </button>
       </div>
       {weatherData ? (
         <div className="data ml-44 mt-3 p-2">
-          <p className="text-3xl font-bold">Weather in {weatherData.name}</p>
+          <p className="text-3xl font-bold">
+            Weather in {weatherData.name},{weatherData.sys.country}
+          </p>
           <p className="text-3xl font-bold">{weatherData.main.temp}°C</p>
           <p className="text-xl font-bold">{weatherData.weather.main}</p>
           <p className="text-xl font-semibold">
@@ -56,23 +58,23 @@ export default function Home() {
         <p className="ml-14 mt-4 text-white text-2xl"> Loading.. </p>
       )}
       <footer>
-        <div class="footer  ">
+        <div className="footer  ">
           <div className="icons ">
-            <p class="text-white text text-center ml-52 mt-40 sm:text-left">
+            <p class="text-black text text-center ml-52 mt-40 sm:text-left">
               © 2025 Weather-app —
               <a
                 href="#"
                 rel="noopener noreferrer"
-                class="text-white ml-1"
+                className="text-black ml-1"
                 target="_blank"
               >
                 Kumail-ahmad
               </a>
             </p>
-            <span class="social-icons flex p-3 ml-60  flex-row gap-5">
+            <span className="social-icons flex p-3 ml-60  flex-row gap-5">
               <a
                 href="https://github.com/kumail-ahmad"
-                class="github"
+                className="github"
                 target="_blank"
               >
                 <svg fill="currentColor" viewBox="0 0 24 24" class="w-5 h-5">
@@ -81,7 +83,7 @@ export default function Home() {
               </a>
               <a
                 href="https://x.com/elonmusk?mx=2"
-                class="twitter"
+                className="twitter"
                 target="_blank"
               >
                 <svg
@@ -89,7 +91,7 @@ export default function Home() {
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   strokeWidth="2"
-                  class="w-5 h-5"
+                  className="w-5 h-5"
                   viewBox="0 0 24 24"
                 >
                   <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
@@ -97,7 +99,7 @@ export default function Home() {
               </a>
               <a
                 href="https://www.instagram.com/instagram?igsh=MTdybm9oeXdiY3Qzbg=="
-                class="instagram"
+                className="instagram"
                 target="_blank"
               >
                 <svg
@@ -106,7 +108,7 @@ export default function Home() {
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   strokeWidth="2"
-                  class="w-5 h-5"
+                  className="w-5 h-5"
                   viewBox="0 0 24 24"
                 >
                   <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
@@ -115,7 +117,7 @@ export default function Home() {
               </a>
               <a
                 href="https://www.linkedin.com/in/kumal-ahmad-819678285?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
-                class="linkedin"
+                className="linkedin"
                 target="_blank"
               >
                 <svg
@@ -124,7 +126,7 @@ export default function Home() {
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   strokeWidth="0"
-                  class="w-5 h-5"
+                  className="w-5 h-5"
                   viewBox="0 0 24 24"
                 >
                   <path
